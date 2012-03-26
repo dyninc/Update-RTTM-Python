@@ -1,0 +1,17 @@
+An example script which will add a newly created web server into RTTM (Dynect Real Time Traffic Mnagement) for a specific region, if the serivce or region does not exist yet they will be created
+The script uses the DynectDNS library and specifically imports DynectRest from it
+
+The credentials are read out of a configuration file in the same directory named credentials.cfg in the format:
+
+[Dynect]
+user : user_name
+customer : customer_name
+password: password
+
+
+The script has the following usage: "python UpdateRTTM.py zone fqdn region ip"
+
+zone - zone of the RTTM (ie: myzone.net)
+fqdn - the fully qualified domain name of the RTTM (ie: testrttm.myzone.net)
+region - the region to add the ip address to. If there is a space in the region, for example US East, replace the space with %20 (ie: US%20East)
+ip - the ip address of the server (ie: 1.2.3.4)
